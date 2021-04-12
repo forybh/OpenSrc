@@ -21,6 +21,7 @@ import java.util.Collections;
 import java.util.HashMap;
 
 public class searcher {
+
     private String post;
 
     public void setPost(String s) {
@@ -29,6 +30,7 @@ public class searcher {
     public String getPost() {
         return this.post;
     }
+
     public String[] makeKey(String s) {
         KeywordExtractor ke = new KeywordExtractor();
         KeywordList kl = ke.extractKeyword(s, true);
@@ -47,7 +49,8 @@ public class searcher {
         objectInputStream.close();
         return (HashMap)object;
     }
-    public float InnerProduct(HashMap<String, ArrayList> hash, String[] keys, int id) {
+
+    public float Innerproduct(HashMap<String, ArrayList> hash, String[] keys, int id) {
         float calc = 0;
         for(String s : keys) {
             ArrayList temp = hash.get(s);
@@ -78,6 +81,7 @@ public class searcher {
 
         return (float)Math.round(result*100)/100;
     }
+
     public void topThree(ArrayList<Float> arr) throws IOException, SAXException, ParserConfigurationException {
         String[] title = getTitle();
 

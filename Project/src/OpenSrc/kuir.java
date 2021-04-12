@@ -35,6 +35,9 @@ public class kuir {
             for(int i = 0; i < title.length; i++) {
                 arr.add(p.CalcSim(s, i));
                 System.out.println("Cos: " + i + " " + p.CalcSim(s, i));
+            ArrayList<Float> arr = new ArrayList<Float>();
+            for(int i = 0; i < title.length; i++) {
+                arr.add(p.CalcSim(p.getIndex(args[1]), s, i));
             }
             p.topThree(arr);
         }
