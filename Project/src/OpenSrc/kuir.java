@@ -7,8 +7,6 @@ import javax.xml.transform.TransformerException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import OpenSrc.*;
-
 public class kuir {
     public static void main(String[] args) throws IOException, TransformerException, ParserConfigurationException, SAXException, ClassNotFoundException {
         if(args[0].equals("-c")) {
@@ -27,10 +25,19 @@ public class kuir {
             indexer i = new indexer();
             i.makeIndex();
             i.readIndex();
-
         }
-
-
+        else if(args[0].equals("-s")){
+            searcher p = new searcher();
+            String[] s = p.makeKey(args[3]);
+            String[] title = p.getTitle();
+            p.setPost(args[1]);
+            ArrayList<Float> arr = new ArrayList<Float>();
+            for(int i = 0; i < title.length; i++) {
+                arr.add(p.CalcSim(s, i));
+                System.out.println("Cos: " + i + " " + p.CalcSim(s, i));
+            }
+            p.topThree(arr);
+        }
 
     }
 }
