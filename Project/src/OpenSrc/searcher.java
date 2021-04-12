@@ -50,7 +50,7 @@ public class searcher {
         return (HashMap)object;
     }
 
-    public float Innerproduct(HashMap<String, ArrayList> hash, String[] keys, int id) {
+    public float InnerProduct(HashMap<String, ArrayList> hash, String[] keys, int id) {
         float calc = 0;
         for(String s : keys) {
             ArrayList temp = hash.get(s);
