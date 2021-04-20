@@ -13,11 +13,11 @@ public class genSnippet {
             FileReader fr = new FileReader("input.txt");
             String[] s = {"라면 밀가루 달걀 밥 생선","라면 물 소금 반죽","첨부 봉지면 인기","초밥 라면 밥물 채소 소금","초밥 종류 활어"};
 
-            if(args[0].equals('f')){
+            if(args[0].equals("-f")){
                 File file = new File(args[1].toString());
 //                Document doc = Jsoup.parse(file.toString(), "UTF-8", "http://example.com/");
             }
-            if(args[2].equals('q')){
+            if(args[2].equals("-q")){
                 String[] words = args[3].split(" ");
                 ArrayList<Integer> c = new ArrayList<Integer>(5);
                 for(int i = 0; i < 5; i++) {
@@ -38,6 +38,7 @@ public class genSnippet {
                         index = t;
                     }
                     t+=1;
+                    count = 0;
                 }
                 System.out.println(s[index]);
             }
